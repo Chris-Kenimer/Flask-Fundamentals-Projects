@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" media="screen" title="main-style">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}" media="screen" title="main-style">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}" media="screen" title="main-style">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}">
+    </script>
+    <title>DOJOs!</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/survey" method="POST">
+        <div class="row">
+          <div class="four columns">
+            <label for="fullName">Your Name</label>
+            <input class="u-full-width" type="text" placeholder="John Doe" id="fullName" name="fullName">
+          </div>
+          <div class="four columns">
+            <label for="dojoLocation">Dojo Location</label>
+            <select class="u-full-width" id="dojoLocation" name="dojoLocation">
+              <option value="San Jose">San Jose</option>
+              <option value="New York">New York</option>
+              <option value="Seattle">Seattle</option>
+            </select>
+          </div>
+          <div class="four columns">
+            <label for="favoriteLanguage">Favorite Language</label>
+            <select class="u-full-width" id="favoriteLanguage" name="favoriteLanguage">
+              <option value="Python">Python</option>
+              <option value="PHP">PHP</option>
+              <option value="Javascript">Javascript</option>
+            </select>
+          </div>
+        </div>
+        <label for="comments">Comments? (optional)</label>
+        <textarea class="u-full-width" placeholder="Hi Dave …" id="comments" name="comments"></textarea>
+        <input class="button-primary" type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+body{
+  background-color: lightgray;
+}
+.center-text
+{
+  text-align: center;
+}
+#landing-page-nav ul li
+{
+  display: inline-block;
+  list-style: none;
+}
+div#landing-message
+{
+  height: 75vh;
+  text-align: center;
+  line-height: 75vh;
+}
+#landing-message h1 {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  font-size: 65px;
+  color: royalblue;
+  text-shadow: 2px 2px steelblue;
+}

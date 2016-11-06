@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" media="screen" title="main-style">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}" media="screen" title="main-style">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}" media="screen" title="main-style">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <title>Hello Ninjas</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="three columns">
+          <h3>Ninja Facts</h3>
+        </div>
+        <div class="six columns">
+          <ul>
+            <li>
+              <h4>Ninja were not called ninja</h4>
+              <p>
+                  Documents show that the ideograms for ninja were correctly read as shinobi no mono in the medieval period, “ninja” which is the mock-Chinese reading of the same ideograms became popular in the 20th century.
+              </p>
+            </li>
+            <li>
+              <h4>The first mention of ninja</h4>
+              <p>
+                The first historical record of ninja comes from the Taiheiki war chronicle written around 1375. It states that ninja were sent out on a stormy night to infiltrate and burn down enemy buildings.
+              </p>
+            <li>
+              <h4>The ninja golden age</h4>
+                <p>
+                    The ninja thrived during the 15th and 16th centuries when Japan was torn apart by wars. After the year 1600, peace arrived in Japan and so began the decline of the ninja.
+                </p>
+            </li>
+          </ul>
+        </div>
+        <div class="three columns">
+          <img src="{{ url_for('static', filename='images/ninja1.jpeg')}}" alt="" />
+        </div>
+      </div>
+      <div class="row">
+        <p>
+          Source: <a href="http://list25.com/25-fascinating-facts-about-the-real-ninja-of-history/">http://list25.com/25-fascinating-facts-about-the-real-ninja-of-history/</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

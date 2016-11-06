@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" media="screen" title="main-style">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}" media="screen" title="main-style">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}" media="screen" title="main-style">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}">
+    </script>
+    <title>Index</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="landing-message" class="twelve columns center-text">
+          <h1>Hello Class!</h1>
+        </div>
+        <div id="landing-page-nav"class="twelve columns center-text">
+          <ul>
+            <li><a class="button button-primary" href="/ninjas">Ninjas!!!!</a></li>
+            <li><a class="button button-primary" href="/dojos/new">Dojos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

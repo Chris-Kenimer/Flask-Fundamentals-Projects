@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" media="screen" title="main-style">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}" media="screen" title="main-style">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}" media="screen" title="main-style">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}">
+    </script>
+    <title>DOJOs!</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Submitted Information</h3>
+      <ul>
+        <li>Name: {{ name }}</li>
+        <li>Dojo Location: {{ dojo }}</li>
+        <li>Favorite Language: {{ favoriteLanguage }}</li>
+        <li>Comments:   {{ comments }}</li>
+      </ul>
+    </div>
+  </body>
+</html>

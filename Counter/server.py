@@ -5,10 +5,9 @@ app.secret_key = 'TonsOfVisitsAndLotsOfFun'
 def index():
     if session.get('counter'):
         session['counter'] += 1
-        return render_template('index.html', counter=session['counter'])
     else:
         session['counter'] = 1
-        return render_template('index.html', counter=session['counter'])
+    return render_template('index.html')
 @app.route('/ninjas')
 def ninjas():
     session['counter'] += 1

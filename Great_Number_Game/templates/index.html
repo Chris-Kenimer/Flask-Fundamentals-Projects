@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Great Number Game</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/material.css') }}"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="Material Framework is an easy to use Material Design Framework for the web.">
+	<meta charset="utf-8"/>
+</head>
+<body class="bg-blue-400">
+	<div class="container card-container bg-blue-100">
+		<div class="card" z="1">
+			<div class="toolbar bg-red-500 color-white">
+				<span class="toolbar-label">Welcome to the Great Number Game</span>
+			</div>
+				<p>
+					I am thinking of a number between 1 and 100
+				</p>
+		</div>
+		<div class="card" z="1">
+			<form class="" action="/guess" method="post">
+				<input type="text" name="guess" class="text-input" value="" placeholder="Take a guess!">
+				<div class="row">
+						<button type="submit" name="button" class="button raised bg-blue-600">Submit</button>
+				</div>
+			</form>
+			{% if answer != '' %}
+
+				{% if answer == True %}
+				<div class="card rich-card bg-green-a400">
+					<div class="card-hero" style="background-image: url('static/img/happy_smiley_face.png')">
+				{% elif answer == False %}
+				<div class="card rich-card bg-yellow-200">
+					<div class="card-hero" style="background-image: url('static/img/sad_smiley_face.jpg')">
+				{% endif %}
+				</div>
+				<div class="divider"></div>
+				<div class="card-footer">
+					<p class="color-deep-orange-400">
+				{% if answer == True %}
+					<a href="/reset" class="button button-primary">Play Again?</a>
+				{% elif answer == False %}
+					Keep Trying
+				{% endif %}
+					</p>
+				</div>
+			</div>
+				<div>
+					<button type="button" class="button bg-blue-400 raised" id="reveal-hint"> Need a hint? <span id="hint">{{ session['randomNumber'] }}</span></button>
+				</div>
+			</div>
+			{% endif %}
+	</div>
+<script src="{{ url_for('static', filename='js/material.js') }}"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#hint').hide();
+		$('#reveal-hint').on('click', function(){
+			$('#hint').toggle();
+		});
+	});
+</script>
+
+</body>
+</html>

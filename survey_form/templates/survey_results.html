@@ -8,17 +8,19 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}">
     </script>
-    <title>DOJOs!</title>
+    <title>Results!</title>
   </head>
   <body>
     <div class="container">
-      <h3>Submitted Information</h3>
-      <ul>
-        <li>Name: {{ name }}</li>
-        <li>Dojo Location: {{ dojo }}</li>
-        <li>Favorite Language: {{ favoriteLanguage }}</li>
-        <li>Comments:   {{ comments }}</li>
-      </ul>
+      <div class="row">
+        <h3>Submission Results</h3>
+        <ul>
+          <li>Name: {{ results.name }}</li>
+          <li>Dojo: {{ results.dojo }}</li>
+          <li>Language: {{ results.language }}</li>
+          <li>Comments: {{ results.comments }}</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

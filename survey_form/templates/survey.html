@@ -8,35 +8,36 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}">
     </script>
-    <title>DOJOs!</title>
+    <title>Ninja's Survey</title>
   </head>
   <body>
     <div class="container">
-      <form action="/survey" method="POST">
+      <form action="/survey-submit" method="POST">
         <div class="row">
           <div class="four columns">
-            <label for="fullName">Your Name</label>
-            <input class="u-full-width" type="text" placeholder="John Doe" id="fullName" name="fullName">
+            <label for="name">Name: </label>
+            <input class="u-full-width" type="text" id="name" name="name" placeholder="Jimmy CoolDude">
           </div>
           <div class="four columns">
-            <label for="dojoLocation">Dojo Location</label>
-            <select class="u-full-width" id="dojoLocation" name="dojoLocation">
-              <option value="San Jose">San Jose</option>
-              <option value="New York">New York</option>
+            <label for="dojo">Attending Dojo: </label>
+            <select class="u-full-width" id="dojo" name="dojo">
               <option value="Seattle">Seattle</option>
+              <option value="San Antonio">San Antonio</option>
+              <option value="New York">New York</option>
             </select>
           </div>
           <div class="four columns">
-            <label for="favoriteLanguage">Favorite Language</label>
-            <select class="u-full-width" id="favoriteLanguage" name="favoriteLanguage">
-              <option value="Python">Python</option>
+            <label for="language">Favorite Language</label>
+            <select class="u-full-width" id="language" name="language">
+              <option value="Pyhton">Python</option>
               <option value="PHP">PHP</option>
               <option value="Javascript">Javascript</option>
+              <option value="Swift/iOS">Swift/iOS</option>
             </select>
           </div>
         </div>
-        <label for="comments">Comments? (optional)</label>
-        <textarea class="u-full-width" placeholder="Hi Dave …" id="comments" name="comments"></textarea>
+        <label for="comments">Comments</label>
+        <textarea class="u-full-width" placeholder="CodingDojo is AMAZING! …" id="comments" name="comments"></textarea>
         <input class="button-primary" type="submit" value="Submit">
       </form>
     </div>

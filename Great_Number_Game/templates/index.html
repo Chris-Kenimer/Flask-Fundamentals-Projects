@@ -28,10 +28,13 @@
 			</form>
 			{% if answer != '' %}
 
-				{% if answer == True %}
+				{% if answer == 'True' %}
 				<div class="card rich-card bg-green-a400">
 					<div class="card-hero" style="background-image: url('static/img/happy_smiley_face.png')">
-				{% elif answer == False %}
+				{% elif answer == 'Too Low' %}
+				<div class="card rich-card bg-yellow-200">
+					<div class="card-hero" style="background-image: url('static/img/sad_smiley_face.jpg')">
+				{% elif answer == 'Too High' %}
 				<div class="card rich-card bg-yellow-200">
 					<div class="card-hero" style="background-image: url('static/img/sad_smiley_face.jpg')">
 				{% endif %}
@@ -39,10 +42,12 @@
 				<div class="divider"></div>
 				<div class="card-footer">
 					<p class="color-deep-orange-400">
-				{% if answer == True %}
+				{% if answer == 'True' %}
 					<a href="/reset" class="button button-primary">Play Again?</a>
-				{% elif answer == False %}
-					Keep Trying
+				{% elif answer == 'Too Low' %}
+					Too Low
+				{% elif answer == 'Too High' %}
+					Too High
 				{% endif %}
 					</p>
 				</div>

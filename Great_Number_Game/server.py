@@ -8,9 +8,11 @@ def index():
         print session['guess']
         print session['randomNumber']
         if int(session['guess']) == session['randomNumber']:
-            answer = True
-        else:
-            answer = False
+            answer = 'True'
+        elif int(session['guess']) < session['randomNumber']:
+            answer = 'Too Low'
+        elif int(session['guess']) > session['randomNumber']:
+            answer = 'Too High'
     else:
         answer = ''
         session['randomNumber'] = random.randrange(0,101)

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/siimple.min.css') }}"/>
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}"/>
+    <title>Ninja Gold</title>
+  </head>
+  <body>
+
+    <div class="container grid-fluid">
+      <h1 class="center-text">Ninja Gold</h1>
+      <hr>
+      <div class="row">
+        <div class="col-1">
+          <label for="gold-value">Gold Value:</label>
+        </div>
+        <div class="col-4">
+          <input type="text" class="form-input" name="gold-value" value="{{ session['value'] }}">
+        </div>
+      </div>
+      <!-- Start Find Gold Sections -->
+      <div class="row">
+          <div class="col-3 wrapper">
+            <div class="section center-text">
+                  <h5>Farm</h5>
+                  <p>
+                    (earns 10-20 golds)
+                  </p>
+                  <form action="/process_money" method="POST">
+                    <input type="hidden" name="gold" value="farm">
+                    <input type="submit" name="farm" value="Find Gold!" class="btn">
+                  </form>
+            </div>
+          </div>
+          <div class="col-3 wrapper">
+            <div class="section center-text">
+                  <h5>Cave</h5>
+                  <p>
+                    (earns 5-10 golds)
+                  </p>
+                  <form action="/process_money" method="POST">
+                    <input type="hidden" name="gold" value="cave">
+                    <input type="submit" name="cave" value="Find Gold!" class="btn">
+                  </form>
+            </div>
+          </div>
+          <div class="col-3 wrapper">
+            <div class="section center-text">
+                  <h5>House</h5>
+                  <p>
+                    (earns 2-5 golds)
+                  </p>
+                  <form action="/process_money" method="POST">
+                    <input type="hidden" name="gold" value="house">
+                    <input type="submit" name="house" value="Find Gold!" class="btn">
+                  </form>
+            </div>
+          </div>
+          <div class="col-3 wrapper">
+            <div class="section center-text">
+                  <h5>Casino</h5>
+                  <p>
+                    (earns/takes 0-50 golds)
+                  </p>
+                  <form action="/process_money" method="POST">
+                    <input type="hidden" name="gold" value="casino">
+                    <input type="submit" name="casino" value="Find Gold!" class="btn">
+                  </form>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End Find Gold Sections -->
+      <div id="activites-container"class="row">
+        <div class="section">
+          <h5>Activities</h5>
+          <div id="activites" class="row">
+            {% for dict_item in session['log'] %}
+               {% for key, value in dict_item.items() %}
+                  {% if value < 0 %}
+                  <p>
+                    Entered a {{key}} and lost {{value}} golds....Ouch
+                  </p>
+                  {% else %}
+                  <p>Earned {{value[0]}} golds from the {{key}} ( {{ value[1]}} )</p>
+                  {% endif %}
+               {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

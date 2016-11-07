@@ -1,0 +1,33 @@
+.container
+{
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 10px;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+.form-input[type=text]{
+  margin-bottom: 0;
+}
+.section {
+  background-color: white;
+  box-shadow: 1px 1px 1px gray;
+  background-color: #f1f5fa;
+  border-radius: 3px;
+  padding: 10px;
+}
+.center-text
+{
+  text-align: center;
+}
+#activites-container{
+  height: 150px;
+}
+#activites{
+  background-color: white;
+  overflow-y: scroll;
+  height: 200px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}

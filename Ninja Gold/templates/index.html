@@ -78,9 +78,9 @@
           <div id="activites" class="row">
             {% for dict_item in session['log'] %}
                {% for key, value in dict_item.items() %}
-                  {% if value < 0 %}
+                  {% if value[0] < 0 %}
                   <p>
-                    Entered a {{key}} and lost {{value}} golds....Ouch
+                    Entered a {{key}} and lost {{value[0]}} golds....Ouch ({{ value[1]}} )
                   </p>
                   {% else %}
                   <p>Earned {{value[0]}} golds from the {{key}} ( {{ value[1]}} )</p>

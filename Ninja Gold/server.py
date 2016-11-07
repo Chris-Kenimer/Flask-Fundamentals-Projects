@@ -13,11 +13,11 @@ def process_money():
     now = datetime.datetime.now()
     global value
     if request.form['gold'] == 'farm':
-        gold = random.randrange(9,21)
+        gold = random.randrange(10,21)
         value += gold
         log.insert(0,{'farm':[gold, now]})
     elif request.form['gold'] == 'cave':
-        gold = random.randrange(4,11)
+        gold = random.randrange(5,11)
         value += gold
         log.insert(0,{'cave':[gold, now]})
     elif request.form['gold'] == 'house':

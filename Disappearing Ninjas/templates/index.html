@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" media="screen" title="no title">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <title>Registration Form</title>
+  </head>
+  <body>
+
+    <div class="container">
+      {% if show == 'none': %}
+      <div id="home">
+        <blockquote>
+          <h1>Nothing to see here</h1>
+        </blockquote>
+      </div>
+      {% endif %}
+        <!-- Leonardo Card -->
+        {% if show == 'blue' or show == 'turtles': %}
+        <div class="row">
+          <div class="col s12 m12">
+            <div class="card">
+              <div class="card-image">
+                <img src="{{ url_for('static', filename='images/leonardo.jpg') }}">
+              </div>
+              <div class="card-content green darken-1 white-text">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <h5>Leonardo</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        <!-- Michelangelo Card -->
+        {% if show == 'orange' or show == 'turtles': %}
+        <div class="row">
+          <div class="col s12 m12">
+            <div class="card">
+              <div class="card-image">
+                <img src="{{ url_for('static', filename='images/michelangelo.jpg') }}">
+              </div>
+              <div class="card-content green darken-1 white-text">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <h5>Michelangelo</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        <!-- Raphael Card -->
+        {% if show == 'red' or show == 'turtles': %}
+        <div class="row">
+          <div class="col s12 m12">
+            <div class="card">
+              <div class="card-image">
+                <img src="{{ url_for('static', filename='images/raphael.jpg') }}">
+              </div>
+              <div class="card-content green darken-1 white-text">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <h5>Raphael</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        <!-- Donatello Card -->
+        {% if show == 'purple' or show == 'turtles': %}
+        <div class="row">
+          <div class="col s12 m12">
+            <div class="card">
+              <div class="card-image">
+                <img src="{{ url_for('static', filename='images/donatello.jpg') }}">
+                <span class="card-title">Donatello</span>
+              </div>
+              <div class="card-content green darken-1 white-text">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <h5>Donatello</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% if show == 'april': %}
+        <div class="row">
+          <div class="col s12 m12">
+            <div class="card">
+              <div class="card-image">
+                <img src="{{ url_for('static', filename='images/notapril.jpg') }}">
+              </div>
+              <div class="card-content green darken-1 white-text">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <h5>April</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+    </div>
+  </body>
+</html>

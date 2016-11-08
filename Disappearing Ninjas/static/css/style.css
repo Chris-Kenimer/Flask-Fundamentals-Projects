@@ -1,0 +1,7 @@
+.container
+{
+  max-width: 700px;
+  background-color: steelblue;
+  padding: 50px;
+  position: relative;
+}

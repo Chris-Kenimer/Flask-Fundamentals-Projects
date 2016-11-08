@@ -17,6 +17,9 @@
           <div class="four columns">
             <label for="name">Name: </label>
             <input class="u-full-width" type="text" id="name" name="name" placeholder="Jimmy CoolDude">
+            <span>
+
+            </span>
           </div>
           <div class="four columns">
             <label for="dojo">Attending Dojo: </label>
@@ -40,6 +43,29 @@
         <textarea class="u-full-width" placeholder="CodingDojo is AMAZING! …" id="comments" name="comments"></textarea>
         <input class="button-primary" type="submit" value="Submit">
       </form>
+      <div class="row">
+        <h3>Submission Results</h3>
+        <ul>
+          <li>Name: {{ session['name'] }}</li>
+          <li>Dojo: {{ session['dojo'] }}</li>
+          <li>Language: {{ session['language'] }}</li>
+          <li>Comments: {{ session['comments'] }}</li>
+        </ul>
+      </div>
+      <div class="row">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <div class="alert-danger">
+            <ul>
+              {% for message in messages %}
+
+                <li>{{message}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        {% endwith %}
+      </div>
     </div>
   </body>
 </html>

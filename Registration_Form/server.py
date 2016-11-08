@@ -16,20 +16,20 @@ def validate():
     session['email'] = request.form['email']
     if (request.form['first_name'].isalpha()) and (request.form['last_name'].isalpha()):
         if len(request.form['first_name']) < 1:
-            flash('Please enter your first name')
+            flash('Please enter your first name', 'error')
         if len(request.form['last_name']) < 1:
-            flash('Please enter your last name')
+            flash('Please enter your last name', 'error')
     else:
-        flash('Your name must only include letters')
+        flash('Your name must only include letters', 'error')
     if request.form['password'] != request.form['confirm-password']:
-        flash('Passwords do not match')
+        flash('Passwords do not match', 'error')
     elif len(request.form['password']) < 8:
-        flash('Passwords must be at least 8 characters')
+        flash('Passwords must be at least 8 characters', 'error')
     elif not PASSWORD_REGEX.match(request.form['password']):
-        flash('Passwords must include at least 1 Capital Letter and 1 Number')
+        flash('Passwords must include at least 1 Capital Letter and 1 Number', 'error')
     elif not EMAIL_REGEX.match(request.form['email']):
-            flash('Please enter a valid email')
+            flash('Please enter a valid email', 'error')
     else:
-        flash('Successfully Registered!')
+        flash('Successfully Registered!', 'success')
     return redirect('/')
 app.run(debug=True)
